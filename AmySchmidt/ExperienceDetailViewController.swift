@@ -12,7 +12,7 @@ class ExperienceDetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    var testData = ["University of Missouri"]
+    let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
 
     var row: Int?
     
