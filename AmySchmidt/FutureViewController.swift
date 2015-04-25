@@ -28,6 +28,11 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
         }
     }
     
+    @IBAction func returnToFuture(segue: UIStoryboardSegue){
+        let futureDetailVC = segue.sourceViewController as! FutureDetailViewController
+        
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }

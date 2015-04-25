@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-HD-OXV">
-                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TZM-V2-tyl">
                                     <size key="itemSize" width="150" height="150"/>
@@ -51,7 +51,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="orgName" destination="kXh-7N-2Br" id="qZ7-Rt-9QG"/>
-                                            <segue destination="Wu2-xX-4h0" kind="show" identifier="experienceDetail" id="zzc-FZ-Vhg"/>
+                                            <segue destination="Wu2-xX-4h0" kind="show" id="uD4-JE-0At"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -71,8 +71,10 @@
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="bottom" secondItem="jWX-U4-EIb" secondAttribute="bottomMargin" id="7WS-ye-ipA"/>
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="top" secondItem="jWX-U4-EIb" secondAttribute="topMargin" id="9Py-nV-sZZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="aTw-HD-OXV" secondAttribute="bottom" id="HCf-7c-CD7"/>
+                            <constraint firstItem="aTw-HD-OXV" firstAttribute="leading" secondItem="jWX-U4-EIb" secondAttribute="leading" id="STE-aS-L0T"/>
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="leading" secondItem="jWX-U4-EIb" secondAttribute="leadingMargin" id="X9V-yh-GeF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aTw-HD-OXV" secondAttribute="trailing" id="Ya1-3S-Ffo"/>
+                            <constraint firstAttribute="trailing" secondItem="aTw-HD-OXV" secondAttribute="trailing" id="a4w-U1-jvM"/>
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="trailing" secondItem="jWX-U4-EIb" secondAttribute="trailingMargin" id="aR6-k1-BRD"/>
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="top" secondItem="7Zy-se-2Cc" secondAttribute="bottom" id="dgT-P2-CvH"/>
                             <constraint firstItem="aTw-HD-OXV" firstAttribute="top" secondItem="7Zy-se-2Cc" secondAttribute="bottom" id="lrO-q2-HAh"/>
@@ -82,7 +84,9 @@
                             <mask key="constraints">
                                 <exclude reference="9Py-nV-sZZ"/>
                                 <exclude reference="HCf-7c-CD7"/>
+                                <exclude reference="X9V-yh-GeF"/>
                                 <exclude reference="Ya1-3S-Ffo"/>
+                                <exclude reference="aR6-k1-BRD"/>
                                 <exclude reference="dgT-P2-CvH"/>
                                 <exclude reference="lrO-q2-HAh"/>
                                 <exclude reference="x5p-TU-xRz"/>
@@ -117,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1453" y="818"/>
         </scene>
-        <!--View Controller-->
+        <!--Future Detail View Controller-->
         <scene sceneID="DrE-JL-FoJ">
             <objects>
-                <viewController id="OoL-sP-0m9" sceneMemberID="viewController">
+                <viewController id="OoL-sP-0m9" customClass="FutureDetailViewController" customModule="AmySchmidt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JkD-iq-Ju0"/>
                         <viewControllerLayoutGuide type="bottom" id="6yq-S7-Ek3"/>
