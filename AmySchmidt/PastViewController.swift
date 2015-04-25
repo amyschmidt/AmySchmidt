@@ -31,11 +31,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         self.navigationItem.backBarButtonItem?.title = " "
     }
     
-    func goBack()
-    {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     @IBAction func returnToPast(segue: UIStoryboardSegue){
         let experienceDetailVC = segue.sourceViewController as! ExperienceDetailViewController
         
@@ -65,18 +60,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         return expCell
     }
     
-    //selection info
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        let expCell: PastExperienceCollectionViewCell = pastCollectionView.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
-
-        expCell.selected = true
-        
-        var selectedExp = indexPath.row
-        println("Collection View: Item Selected: \(selectedExp)")
-        
-        
-    }
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
