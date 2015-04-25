@@ -1,5 +1,5 @@
 //
-//  AboutMeDetailViewController.swift
+//  FutureDetailViewController.swift
 //  AmySchmidt
 //
 //  Created by Amy Schmidt on 4/25/15.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AboutMeDetailViewController: UIViewController {
+class FutureDetailViewController: UIViewController {
 
-    let testData = ["Background", "Coding", "Music", "Fashion", "Cooking", "Traveling"]
-    
+    let testData = ["Trunk Club Internship", "B.S. in Computer Science", "Career Goals", "Personal Goals"]
+
     var row: Int?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,12 +31,9 @@ class AboutMeDetailViewController: UIViewController {
             
         }
         
-        
         self.navigationItem.backBarButtonItem?.title = " "
         self.navigationItem.title = testData[row!]
-
     }
 
-    
 
 }

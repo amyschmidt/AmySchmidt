@@ -117,6 +117,24 @@
             </objects>
             <point key="canvasLocation" x="1453" y="818"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DrE-JL-FoJ">
+            <objects>
+                <viewController id="OoL-sP-0m9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JkD-iq-Ju0"/>
+                        <viewControllerLayoutGuide type="bottom" id="6yq-S7-Ek3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Bl-XL-m23">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="819-3n-Bub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1653" y="796"/>
+        </scene>
         <!--Future-->
         <scene sceneID="eke-Wc-DUl">
             <objects>
@@ -133,22 +151,44 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K16-94-49M">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aec-R6-yYp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FutureCell" id="aec-R6-yYp" customClass="FutureCollectionViewCell" customModule="AmySchmidt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXt-Kp-3GN">
+                                                    <rect key="frame" x="8" y="8" width="134" height="134"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="HXt-Kp-3GN" firstAttribute="leading" secondItem="aec-R6-yYp" secondAttribute="leadingMargin" id="7II-Us-7QD"/>
+                                            <constraint firstItem="HXt-Kp-3GN" firstAttribute="top" secondItem="aec-R6-yYp" secondAttribute="topMargin" id="l0w-kB-xvv"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="HXt-Kp-3GN" secondAttribute="trailing" id="tr8-rX-9BK"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="HXt-Kp-3GN" secondAttribute="bottom" id="yIk-6T-Jko"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="futureLabel" destination="HXt-Kp-3GN" id="1AM-lz-Dnf"/>
+                                            <segue destination="OoL-sP-0m9" kind="show" id="jqq-w2-k3E"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8ep-w1-Zcg" id="fUM-rC-2eu"/>
+                                    <outlet property="delegate" destination="8ep-w1-Zcg" id="BhC-ot-2Ag"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,6 +201,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Future" id="fot-1B-68z"/>
                     <navigationItem key="navigationItem" title="Future" id="607-e1-Dg8"/>
+                    <connections>
+                        <outlet property="futureCollectionView" destination="3hB-MY-Utk" id="ddt-my-lYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQF-nP-dXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
