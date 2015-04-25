@@ -16,6 +16,7 @@
 		E4CDC4081AEB058500E3190E /* PastExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */; };
 		E4CDC40A1AEB20FD00E3190E /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */; };
 		E4CDC40C1AEB365400E3190E /* ExperienceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC40B1AEB365400E3190E /* ExperienceData.swift */; };
+		E4CDC40E1AEBEADE00E3190E /* AmyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
 		E4CDC40B1AEB365400E3190E /* ExperienceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceData.swift; sourceTree = "<group>"; };
+		E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */,
 				E4B8696B1AEAEBB4008F19D9 /* Main.storyboard */,
+				E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */,
 				E4CDC4051AEB03E900E3190E /* PastViewController.swift */,
 				E4CDC40B1AEB365400E3190E /* ExperienceData.swift */,
 				E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CDC40E1AEBEADE00E3190E /* AmyViewController.swift in Sources */,
 				E4CDC4061AEB03E900E3190E /* PastViewController.swift in Sources */,
 				E4CDC40C1AEB365400E3190E /* ExperienceData.swift in Sources */,
 				E4CDC40A1AEB20FD00E3190E /* ExperienceDetailViewController.swift in Sources */,

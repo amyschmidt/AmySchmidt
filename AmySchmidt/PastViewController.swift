@@ -20,6 +20,11 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func returnToPast(segue: UIStoryboardSegue){
+        let experienceDetailVC = segue.sourceViewController as! ExperienceDetailViewController
+        
+    }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return headers.count
@@ -30,40 +35,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         return testData.count
     }
     
-    //set headers
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        
-        var header : UICollectionReusableView! = nil
-        
-        if kind == UICollectionElementKindSectionHeader {
-            header = pastCollectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier:"PastHeader", forIndexPath:indexPath) as! UICollectionReusableView
-            
-            if header.subviews.count == 0 {
-                let headerLabel = UILabel()
-                header.addSubview(headerLabel)
-                
-                //set design for label
-                headerLabel.textAlignment = .Center
-                headerLabel.textColor = UIColor.blackColor()
-                headerLabel.font = UIFont(name:"Helvetica Neue-Bold", size:32)
-                headerLabel.layer.masksToBounds = true // has to be added for iOS 8 label
-                headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-                header.addConstraints(
-                    NSLayoutConstraint.constraintsWithVisualFormat("H:|-10-[lab(125)]",
-                        options:nil, metrics:nil, views:["lab":headerLabel]))
-                header.addConstraints(
-                    NSLayoutConstraint.constraintsWithVisualFormat("V:[lab(30)]-5-|",
-                        options:nil, metrics:nil, views:["lab":headerLabel]))
-                
-            }
-            
-            let headerLabel = header.subviews[0] as! UILabel
-            headerLabel.text = headers[indexPath.section]
-        }
-        
-        return header
-    }
-
     
     //set cells
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -91,6 +62,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         
     }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var experienceVC: ExperienceDetailViewController = segue.destinationViewController as! ExperienceDetailViewController
@@ -100,7 +72,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         var selectedExp = path?.row
         
-        println("Prepare for Segue: Item Selected: \(selectedExp)")
+        println("Prepare for Segue: Item Selected: \(selectedExp!)")
         
         experienceVC.row = selectedExp
     }

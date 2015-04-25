@@ -19,9 +19,12 @@ class ExperienceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        titleLabel.text = testData[row!]
+        println("View Did Load: Item Selected: \(row!) and \(testData[row!])")
+        
+        self.title = testData[row!]
+
+
     }
 
-    
 
 }
