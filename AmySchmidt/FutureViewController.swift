@@ -1,5 +1,5 @@
 //
-//  AmyViewController.swift
+//  FutureViewController.swift
 //  AmySchmidt
 //
 //  Created by Amy Schmidt on 4/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AmyViewController: UIViewController {
+class FutureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,5 @@ class AmyViewController: UIViewController {
             nav.barTintColor = UIColor(red:135.0/255.0, green:134.0/255.0, blue:173.0/255.0, alpha:1.0)
             nav.translucent = false
             nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 23)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
-        }
-    }
-
-
+        }    }
 }

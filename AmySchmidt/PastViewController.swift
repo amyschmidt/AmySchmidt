@@ -18,7 +18,22 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //declare navigation Bar
+        var navBar = self.navigationController?.navigationBar
+        
+        if let nav = navBar {
+            //set navBar style and title
+            nav.barTintColor = UIColor(red:135.0/255.0, green:134.0/255.0, blue:173.0/255.0, alpha:1.0)
+            nav.translucent = false
+            nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 23)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+        
+        self.navigationItem.backBarButtonItem?.title = " "
+    }
+    
+    func goBack()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func returnToPast(segue: UIStoryboardSegue){
