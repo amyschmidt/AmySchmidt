@@ -12,8 +12,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
 
     @IBOutlet weak var pastCollectionView: UICollectionView!
     
-    let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
-    let testImages = ["UMC.png", "MADL.png", "DSA.png", "progressus.png", "monsanto.png", "ACT.png"]
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -22,7 +20,8 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
     
-    
+    var experiences = [ExperienceModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,39 +42,38 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         self.navigationItem.backBarButtonItem?.title = " "
         
-
         
         //get data from json into an array
-        JSONData.getExperienceDataFromFileWithSuccess { (data) -> Void in
-            let json = JSON(data: data)
+        let filePath = NSBundle.mainBundle().pathForResource("ExperienceData",ofType:"json")
+        var readError:NSError?
+        let data = NSData(contentsOfFile: filePath!, options: NSDataReadingOptions.DataReadingUncached, error: &readError)
+        let json = JSON(data: data!)
+        //println(json)
+        
+        if let experienceArray = json["experience"].array {
+            for expDict in experienceArray {
+                var orgName: String? = expDict["orgName"].string
+                var position: String? = expDict["position"].string
+                var orgDescription: String? = expDict["orgDescription"].string
+                var orgTimeline: String? = expDict["orgTimeline"].string
+                var orgLocation: String? = expDict["orgLocation"].string
+                var icon: String? = expDict["icon"].string
+                
+                var experience = ExperienceModel(orgName: orgName, position: position, orgDescription: orgDescription, orgTimeline: orgTimeline, orgLocation: orgLocation, icon: icon)
+                experiences.append(experience)
 
-            if let experienceArray = json["experience"].array {
-                
-            var experiences = [ExperienceModel]()
-                
-                for expDict in experienceArray {
-                    var orgName: String? = expDict["orgName"].string
-                    var position: String? = expDict["position"].string
-                    var orgDescription: String? = expDict["orgDescription"].string
-                    var orgTimeline: String? = expDict["orgTimeline"].string
-                    var orgLocation: String? = expDict["orgLocation"].string
-                
-                    var experience = ExperienceModel(orgName: orgName, position: position, orgDescription: orgDescription, orgTimeline: orgTimeline, orgLocation: orgLocation)
-                    experiences.append(experience)
-                }
             }
         }
 
     }
     
-
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     //return number of items in each section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testData.count
+        return experiences.count
     }
     
     
@@ -88,9 +86,8 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         expCell.frame.size.width = (screenWidth / 2)
         expCell.frame.size.height = (screenHeight / 3)
         
-        
-        let experience = testData[indexPath.row]
-        let image = testImages[indexPath.row]
+        let experience = experiences[indexPath.row].orgName
+        let image = experiences[indexPath.row].icon
         expCell.setExperienceCell(experience, orgImageText: image)
         
         expCell.backgroundColor = UIColor.whiteColor()

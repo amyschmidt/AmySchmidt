@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		E4672E6F1AEC3B460045DA93 /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */; };
 		E4672E711AEC42360045DA93 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E701AEC42360045DA93 /* SwiftyJSON.swift */; };
-		E4672E731AEC43610045DA93 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E721AEC43610045DA93 /* JSONData.swift */; };
 		E4672E771AEC6F010045DA93 /* ExperienceData.json in Resources */ = {isa = PBXBuildFile; fileRef = E4672E761AEC6F010045DA93 /* ExperienceData.json */; };
 		E4672E7D1AEC827C0045DA93 /* FutureData.json in Resources */ = {isa = PBXBuildFile; fileRef = E4672E7C1AEC827C0045DA93 /* FutureData.json */; };
 		E4672E7F1AEC82870045DA93 /* AboutMeData.json in Resources */ = {isa = PBXBuildFile; fileRef = E4672E7E1AEC82870045DA93 /* AboutMeData.json */; };
+		E4672E811AED8E140045DA93 /* FutureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E801AED8E140045DA93 /* FutureModel.swift */; };
+		E4672E831AED90390045DA93 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E821AED90390045DA93 /* AboutModel.swift */; };
 		E4B869681AEAEBB4008F19D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */; };
 		E4B8696D1AEAEBB4008F19D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B8696B1AEAEBB4008F19D9 /* Main.storyboard */; };
 		E4B8696F1AEAEBB4008F19D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B8696E1AEAEBB4008F19D9 /* Images.xcassets */; };
@@ -42,10 +43,11 @@
 /* Begin PBXFileReference section */
 		E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
 		E4672E701AEC42360045DA93 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		E4672E721AEC43610045DA93 /* JSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		E4672E761AEC6F010045DA93 /* ExperienceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExperienceData.json; sourceTree = "<group>"; };
 		E4672E7C1AEC827C0045DA93 /* FutureData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FutureData.json; sourceTree = "<group>"; };
 		E4672E7E1AEC82870045DA93 /* AboutMeData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AboutMeData.json; sourceTree = "<group>"; };
+		E4672E801AED8E140045DA93 /* FutureModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureModel.swift; sourceTree = "<group>"; };
+		E4672E821AED90390045DA93 /* AboutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
 		E4B869621AEAEBB4008F19D9 /* AmySchmidt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmySchmidt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B869661AEAEBB4008F19D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,16 +114,17 @@
 				E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */,
 				E4B8696B1AEAEBB4008F19D9 /* Main.storyboard */,
 				E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */,
+				E4672E821AED90390045DA93 /* AboutModel.swift */,
 				E4CDC4111AEC0D4A00E3190E /* AboutMeCollectionViewCell.swift */,
 				E4CDC4131AEC12D700E3190E /* AboutMeDetailViewController.swift */,
 				E4CDC40F1AEBFAA800E3190E /* FutureViewController.swift */,
 				E4CDC4171AEC173300E3190E /* FutureDetailViewController.swift */,
 				E4CDC4151AEC157900E3190E /* FutureCollectionViewCell.swift */,
+				E4672E801AED8E140045DA93 /* FutureModel.swift */,
 				E4CDC4051AEB03E900E3190E /* PastViewController.swift */,
 				E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */,
 				E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */,
 				E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */,
-				E4672E721AEC43610045DA93 /* JSONData.swift */,
 				E4B8696E1AEAEBB4008F19D9 /* Images.xcassets */,
 				E4B869701AEAEBB4008F19D9 /* LaunchScreen.xib */,
 				E4B869651AEAEBB4008F19D9 /* Supporting Files */,
@@ -258,12 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CDC4181AEC173300E3190E /* FutureDetailViewController.swift in Sources */,
+				E4672E811AED8E140045DA93 /* FutureModel.swift in Sources */,
 				E4672E6F1AEC3B460045DA93 /* ExperienceModel.swift in Sources */,
 				E4CDC4101AEBFAA800E3190E /* FutureViewController.swift in Sources */,
 				E4672E711AEC42360045DA93 /* SwiftyJSON.swift in Sources */,
-				E4672E731AEC43610045DA93 /* JSONData.swift in Sources */,
 				E4CDC4161AEC157900E3190E /* FutureCollectionViewCell.swift in Sources */,
 				E4CDC40E1AEBEADE00E3190E /* AmyViewController.swift in Sources */,
+				E4672E831AED90390045DA93 /* AboutModel.swift in Sources */,
 				E4CDC4061AEB03E900E3190E /* PastViewController.swift in Sources */,
 				E4CDC4141AEC12D700E3190E /* AboutMeDetailViewController.swift in Sources */,
 				E4CDC40A1AEB20FD00E3190E /* ExperienceDetailViewController.swift in Sources */,

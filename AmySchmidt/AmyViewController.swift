@@ -22,6 +22,8 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
     
+    var aboutArray = [AboutModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +41,29 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
             nav.translucent = false
             nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 23)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
         }
+        
+        //get data from json into an array
+        let filePath = NSBundle.mainBundle().pathForResource("AboutMeData",ofType:"json")
+        println(filePath)
+        var readError:NSError?
+        let data = NSData(contentsOfFile: filePath!, options: NSDataReadingOptions.DataReadingUncached, error: &readError)
+        let json = JSON(data: data!)
+        println(json)
+        
+        if let abArray = json["about"].array {
+            for aboutDict in abArray {
+                var title: String? = aboutDict["title"].string
+                var objDescription: String? = aboutDict["description"].string
+                var icon: String? = aboutDict["icon"].string
+                
+                var about = AboutModel(title: title, objDescription: objDescription, icon: icon)
+                aboutArray.append(about)
+                
+            }
+        }
+
     }
     
-    @IBAction func returnToAmy(segue: UIStoryboardSegue){
-        let aboutMeDetailVC = segue.sourceViewController as! AboutMeDetailViewController
-        
-    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -52,7 +71,7 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
     
     //return number of items in each section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testData.count
+        return aboutArray.count
     }
     
     
@@ -66,8 +85,8 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
         aboutCell.frame.size.height = (screenHeight / 3)
         
         
-        let about = testData[indexPath.row]
-        let image = testImages[indexPath.row]
+        let about = aboutArray[indexPath.row].title
+        let image = aboutArray[indexPath.row].icon
         aboutCell.setAboutMeCell(about, aboutImageText: image)
         
         aboutCell.backgroundColor = UIColor.whiteColor()

@@ -15,13 +15,15 @@ class ExperienceModel: NSObject {
     let orgDescription: String
     let orgTimeline: String
     let orgLocation: String
+    let icon: String
 
-    init(orgName: String?, position: String?, orgDescription : String?, orgTimeline : String?, orgLocation : String?) {
+    init(orgName: String?, position: String?, orgDescription : String?, orgTimeline : String?, orgLocation : String?, icon: String?) {
         self.orgName = orgName ?? ""
         self.position = position ?? ""
         self.orgDescription = orgDescription ?? ""
         self.orgTimeline = orgTimeline ?? ""
         self.orgLocation = orgLocation ?? ""
+        self.icon = icon ?? ""
     }
     
 }

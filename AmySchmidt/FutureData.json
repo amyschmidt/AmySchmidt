@@ -1,6 +1,6 @@
 {"future": [
-                {"title":"Trunk Club Software Engineer Internship","description":"For the upcoming Summer of 2015, I have accepted an internship in Chicago, Illinois with Trunk Club. I will be working with primarily with their mobile teams writing Swift for iOS applications.", "icon" : ""},
-                {"title":"B.S. in Computer Science","description":"I am graduating in December 2015 from the University of Missouri with a B.S. in Computer Science and a minor in Mathematics.", "icon" : ""},
-                {"title":"Career Goals","description":"After I graduate, I hope to continue doing iOS development full time. My next goal would be to work as a Product Manager because I have great communication and technical skills.", "icon" : ""}
-                {"title":"Personal Goals","description":"", "icon" : ""}
+                {"title":"Trunk Club Software Engineer Internship","description":"For the upcoming Summer of 2015, I have accepted an internship in Chicago, Illinois with Trunk Club. I will be working with primarily with their mobile teams writing Swift for iOS applications.", "icon" : "trunkclub.png"},
+                {"title":"B.S. in Computer Science","description":"I am graduating in December 2015 from the University of Missouri with a B.S. in Computer Science and a minor in Mathematics.", "icon" : "CS.png"},
+                {"title":"Career Goals","description":"After I graduate, I hope to continue doing iOS development full time. My next goal would be to work as a Product Manager because I have great communication and technical skills.", "icon" : "career.png"},
+                {"title":"Personal Goals","description":"", "icon" : "personal.png"}
 ]}

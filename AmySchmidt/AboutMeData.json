@@ -1,8 +1,9 @@
-{"future": [
-            {"title":"Background","description":"I grew up in St. Louis Missouri and am now a Senior at the University of Missouri.", "icon" : ""},
+{"about": [
+            {"title":"Background","description":"I grew up in St. Louis Missouri and am now a Senior at the University of Missouri.", "icon" : "background.png"},
             {"title":"Coding","description":"Despite not knowing what Computer Science or coding was as I entered college, I knew I wanted to go into engineering and I had always enjoyed computers and technology. I have learned C, Java, and SQL in my courses, along with learning the concepts of Algorithms, Relational Database Management Systems, Object Oriented Programming, and Operating Systems. In Winter 2013-14 I contributed PHP, HTML, and CSS code to a startup in Chicago called Waitbot. For my 2014 summer internship I worked with PHP, MySQL, HTML, CSS, and JavaScript. As of August 2014, I began learning Swift in the University of Missouri's Team Based Mobile Application Development Course. At my current position as a developer for the Microsoft Application Development Lab, I have been a main contributor to a Ruby on Rails web application for loaning out devices on campus.", "icon" : ""},
-            {"title":"Music","description":"", "icon" : ""},
-            {"title":"Fashion","description":"", "icon" : ""},
-            {"title":"Cooking","description":"", "icon" : ""},
-            {"title":"Traveling","description":"", "icon" : ""}
-            ]}
+            {"title":"Music","description":"", "icon" : "music.png"},
+            {"title":"Fashion","description":"", "icon" : "fashion.png"},
+            {"title":"Cooking","description":"", "icon" : "cooking.png"},
+            {"title":"Traveling","description":"", "icon" : "travel.png"}
+            ]
+}

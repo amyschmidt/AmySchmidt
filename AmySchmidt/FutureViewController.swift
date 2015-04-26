@@ -10,8 +10,6 @@ import UIKit
 
 class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
-    let testData = ["Trunk Club Internship", "B.S. in Computer Science", "Career Goals", "Personal Goals"]
-    let testImages = ["trunkclub.png", "CS.png", "career.png", "personal.png"]
 
     @IBOutlet weak var futureCollectionView: UICollectionView!
     
@@ -22,6 +20,8 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
     
+    var futures = [FutureModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,12 +39,29 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
             nav.translucent = false
             nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 23)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
         }
+        
+        //get data from json into an array
+        let filePath = NSBundle.mainBundle().pathForResource("FutureData",ofType:"json")
+        println(filePath)
+        var readError:NSError?
+        let data = NSData(contentsOfFile: filePath!, options: NSDataReadingOptions.DataReadingUncached, error: &readError)
+        let json = JSON(data: data!)
+        println(json)
+        
+        if let futureArray = json["future"].array {
+            for futDict in futureArray {
+                var title: String? = futDict["title"].string
+                var objDescription: String? = futDict["description"].string
+                var icon: String? = futDict["icon"].string
+                
+                var future = FutureModel(title: title, objDescription: objDescription, icon: icon)
+                futures.append(future)
+                
+            }
+        }
+
     }
     
-    @IBAction func returnToFuture(segue: UIStoryboardSegue){
-        let futureDetailVC = segue.sourceViewController as! FutureDetailViewController
-        
-    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -52,7 +69,7 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     //return number of items in each section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testData.count
+        return futures.count
     }
     
     //set cells
@@ -62,11 +79,11 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         futureCell.layer.cornerRadius = 8
         futureCell.frame.size.width = (screenWidth / 2)
-        futureCell.frame.size.height = (screenHeight / 3)
+        futureCell.frame.size.height = (screenHeight / 2)
 
 
-        let future = testData[indexPath.row]
-        let image = testImages[indexPath.row]
+        let future = futures[indexPath.row].title
+        let image = futures[indexPath.row].icon
 
         futureCell.setFutureCell(future, futureImageText: image)
         
