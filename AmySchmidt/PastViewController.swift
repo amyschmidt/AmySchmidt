@@ -13,7 +13,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     @IBOutlet weak var pastCollectionView: UICollectionView!
     
     let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
-    let headers = ["Work Experience"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +28,34 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         }
         
         self.navigationItem.backBarButtonItem?.title = " "
+        
+        
+        //get data from json into an array
+        JSONData.getTopAppsDataFromFileWithSuccess { (data) -> Void in
+            let json = JSON(data: data)
+
+            if let experienceArray = json["experience"].array {
+                var experiences = [ExperienceModel]()
+            
+                for expDict in experienceArray {
+                    var orgName: String? = expDict["orgName"].string
+                    var position: String? = expDict["position"].string
+                    var orgDescription: String? = expDict["orgDescription"].string
+                    var orgTimeline: String? = expDict["orgTimeline"].string
+                    var orgLocation: String? = expDict["orgLocation"].string
+                
+                    var experience = ExperienceModel(orgName: orgName, position: position, orgDescription: orgDescription, orgTimeline: orgTimeline, orgLocation: orgLocation)
+                    experiences.append(experience)
+                }
+                println(experiences[0].orgName)
+            }
+        }
+
     }
     
-    @IBAction func returnToPast(segue: UIStoryboardSegue){
-        let experienceDetailVC = segue.sourceViewController as! ExperienceDetailViewController
-        
-    }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return headers.count
+        return 1
     }
     
     //return number of items in each section

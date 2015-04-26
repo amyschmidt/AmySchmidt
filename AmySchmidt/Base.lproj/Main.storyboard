@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TZM-V2-tyl">
                                     <size key="itemSize" width="150" height="150"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
@@ -55,10 +55,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PastHeader" id="axO-Mm-H2J">
-                                    <rect key="frame" x="0.0" y="0.0" width="568" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="F3y-8o-alP" id="n3G-G3-eri"/>
                                     <outlet property="delegate" destination="F3y-8o-alP" id="qTF-oG-Wfp"/>
@@ -101,12 +97,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXM-GA-Zk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="44"/>
+            <point key="canvasLocation" x="1303" y="44"/>
         </scene>
         <!--Experience Detail-->
         <scene sceneID="QeC-NT-CeH">
             <objects>
-                <viewController title="Experience Detail" hidesBottomBarWhenPushed="YES" id="Wu2-xX-4h0" customClass="ExperienceDetailViewController" customModule="AmySchmidt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Experience Detail" id="Wu2-xX-4h0" customClass="ExperienceDetailViewController" customModule="AmySchmidt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GQj-Rx-gxf"/>
                         <viewControllerLayoutGuide type="bottom" id="39c-lk-57Q"/>
@@ -119,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7K-UM-j10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453" y="818"/>
+            <point key="canvasLocation" x="949" y="796"/>
         </scene>
         <!--Future Detail View Controller-->
         <scene sceneID="DrE-JL-FoJ">
@@ -185,7 +181,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="futureLabel" destination="HXt-Kp-3GN" id="1AM-lz-Dnf"/>
-                                            <segue destination="OoL-sP-0m9" kind="show" id="jqq-w2-k3E"/>
+                                            <segue destination="OoL-sP-0m9" kind="show" id="ghl-Px-iO4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -352,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="F3y-8o-alP" kind="relationship" relationship="rootViewController" id="yNq-WY-G6h"/>
+                        <segue destination="F3y-8o-alP" kind="relationship" relationship="rootViewController" id="iGT-7B-7ge"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zta-YZ-xs6" userLabel="First Responder" sceneMemberID="firstResponder"/>

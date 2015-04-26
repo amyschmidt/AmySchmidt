@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4672E6F1AEC3B460045DA93 /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */; };
+		E4672E711AEC42360045DA93 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E701AEC42360045DA93 /* SwiftyJSON.swift */; };
+		E4672E731AEC43610045DA93 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4672E721AEC43610045DA93 /* JSONData.swift */; };
+		E4672E771AEC6F010045DA93 /* ExperienceData.json in Resources */ = {isa = PBXBuildFile; fileRef = E4672E761AEC6F010045DA93 /* ExperienceData.json */; };
 		E4B869681AEAEBB4008F19D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */; };
 		E4B8696D1AEAEBB4008F19D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B8696B1AEAEBB4008F19D9 /* Main.storyboard */; };
 		E4B8696F1AEAEBB4008F19D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B8696E1AEAEBB4008F19D9 /* Images.xcassets */; };
@@ -15,7 +19,6 @@
 		E4CDC4061AEB03E900E3190E /* PastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4051AEB03E900E3190E /* PastViewController.swift */; };
 		E4CDC4081AEB058500E3190E /* PastExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */; };
 		E4CDC40A1AEB20FD00E3190E /* ExperienceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */; };
-		E4CDC40C1AEB365400E3190E /* ExperienceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC40B1AEB365400E3190E /* ExperienceData.swift */; };
 		E4CDC40E1AEBEADE00E3190E /* AmyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */; };
 		E4CDC4101AEBFAA800E3190E /* FutureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC40F1AEBFAA800E3190E /* FutureViewController.swift */; };
 		E4CDC4121AEC0D4A00E3190E /* AboutMeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CDC4111AEC0D4A00E3190E /* AboutMeCollectionViewCell.swift */; };
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
+		E4672E701AEC42360045DA93 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E4672E721AEC43610045DA93 /* JSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
+		E4672E761AEC6F010045DA93 /* ExperienceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ExperienceData.json; sourceTree = "<group>"; };
 		E4B869621AEAEBB4008F19D9 /* AmySchmidt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmySchmidt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B869661AEAEBB4008F19D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +54,6 @@
 		E4CDC4051AEB03E900E3190E /* PastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastViewController.swift; sourceTree = "<group>"; };
 		E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceDetailViewController.swift; sourceTree = "<group>"; };
-		E4CDC40B1AEB365400E3190E /* ExperienceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceData.swift; sourceTree = "<group>"; };
 		E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmyViewController.swift; sourceTree = "<group>"; };
 		E4CDC40F1AEBFAA800E3190E /* FutureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureViewController.swift; sourceTree = "<group>"; };
 		E4CDC4111AEC0D4A00E3190E /* AboutMeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 		E4B869641AEAEBB4008F19D9 /* AmySchmidt */ = {
 			isa = PBXGroup;
 			children = (
+				E4672E701AEC42360045DA93 /* SwiftyJSON.swift */,
+				E4672E761AEC6F010045DA93 /* ExperienceData.json */,
 				E4B869671AEAEBB4008F19D9 /* AppDelegate.swift */,
 				E4B8696B1AEAEBB4008F19D9 /* Main.storyboard */,
 				E4CDC40D1AEBEADE00E3190E /* AmyViewController.swift */,
@@ -106,7 +114,8 @@
 				E4CDC4051AEB03E900E3190E /* PastViewController.swift */,
 				E4CDC4071AEB058500E3190E /* PastExperienceCollectionViewCell.swift */,
 				E4CDC4091AEB20FD00E3190E /* ExperienceDetailViewController.swift */,
-				E4CDC40B1AEB365400E3190E /* ExperienceData.swift */,
+				E4672E6E1AEC3B460045DA93 /* ExperienceModel.swift */,
+				E4672E721AEC43610045DA93 /* JSONData.swift */,
 				E4B8696E1AEAEBB4008F19D9 /* Images.xcassets */,
 				E4B869701AEAEBB4008F19D9 /* LaunchScreen.xib */,
 				E4B869651AEAEBB4008F19D9 /* Supporting Files */,
@@ -220,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B8696D1AEAEBB4008F19D9 /* Main.storyboard in Resources */,
+				E4672E771AEC6F010045DA93 /* ExperienceData.json in Resources */,
 				E4B869721AEAEBB4008F19D9 /* LaunchScreen.xib in Resources */,
 				E4B8696F1AEAEBB4008F19D9 /* Images.xcassets in Resources */,
 			);
@@ -240,11 +250,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CDC4181AEC173300E3190E /* FutureDetailViewController.swift in Sources */,
+				E4672E6F1AEC3B460045DA93 /* ExperienceModel.swift in Sources */,
 				E4CDC4101AEBFAA800E3190E /* FutureViewController.swift in Sources */,
+				E4672E711AEC42360045DA93 /* SwiftyJSON.swift in Sources */,
+				E4672E731AEC43610045DA93 /* JSONData.swift in Sources */,
 				E4CDC4161AEC157900E3190E /* FutureCollectionViewCell.swift in Sources */,
 				E4CDC40E1AEBEADE00E3190E /* AmyViewController.swift in Sources */,
 				E4CDC4061AEB03E900E3190E /* PastViewController.swift in Sources */,
-				E4CDC40C1AEB365400E3190E /* ExperienceData.swift in Sources */,
 				E4CDC4141AEC12D700E3190E /* AboutMeDetailViewController.swift in Sources */,
 				E4CDC40A1AEB20FD00E3190E /* ExperienceDetailViewController.swift in Sources */,
 				E4B869681AEAEBB4008F19D9 /* AppDelegate.swift in Sources */,
