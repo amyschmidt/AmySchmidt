@@ -11,10 +11,13 @@ import UIKit
 class AboutMeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var aboutImage: UIImageView!
     
-    func setAboutMeCell(aboutLabelText: String) {
+    func setAboutMeCell(aboutLabelText: String, aboutImageText: String) {
         
         self.aboutLabel.text = aboutLabelText
         self.aboutLabel.numberOfLines = 0
+        self.aboutImage.image = UIImage(named: aboutImageText)
+
     }
 }

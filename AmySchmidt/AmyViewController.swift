@@ -11,12 +11,25 @@ import UIKit
 class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     let testData = ["Background", "Coding", "Music", "Fashion", "Cooking", "Traveling"]
-    
+    let testImages = ["background.png", "coding.png", "music.png", "fashion.png", "cooking.png", "travel.png"]
+
     @IBOutlet weak var aboutMeCollectionView: UICollectionView!
+    
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let minInteritemSpacing : CGFloat = 0
+    let minLineSpacing : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //determine screen size
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
         //declare navigation Bar
         var navBar = self.navigationController?.navigationBar
         
@@ -48,14 +61,32 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
         
         let aboutCell: AboutMeCollectionViewCell = aboutMeCollectionView.dequeueReusableCellWithReuseIdentifier("AboutMeCell", forIndexPath: indexPath) as! AboutMeCollectionViewCell
         
+        aboutCell.layer.cornerRadius = 8
+        aboutCell.frame.size.width = (screenWidth / 2)
+        aboutCell.frame.size.height = (screenWidth / 3)
         
         let about = testData[indexPath.row]
-        aboutCell.setAboutMeCell(about)
+        let image = testImages[indexPath.row]
+        aboutCell.setAboutMeCell(about, aboutImageText: image)
         
         aboutCell.backgroundColor = UIColor.whiteColor()
         
         return aboutCell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minLineSpacing
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minInteritemSpacing
+    }
+
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var aboutMeDetailVC: AboutMeDetailViewController = segue.destinationViewController as! AboutMeDetailViewController

@@ -13,11 +13,14 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     @IBOutlet weak var pastCollectionView: UICollectionView!
     
     let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
-    let testImages = ["UMC.png", "MADL.png", "DSA.png", "Progressus.png", "Monsanto.png", "ACT.png"]
+    let testImages = ["UMC.png", "MADL.png", "DSA.png", "progressus.png", "monsanto.png", "ACT.png"]
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let minInteritemSpacing : CGFloat = 0
+    let minLineSpacing : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +41,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         }
         
         self.navigationItem.backBarButtonItem?.title = " "
-        
-        //set layout of collection view cell
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/2)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+
         
         //get data from json into an array
         JSONData.getExperienceDataFromFileWithSuccess { (data) -> Void in
@@ -82,24 +80,50 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     //set cells
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let expCell: PastExperienceCollectionViewCell = pastCollectionView.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
+        let expCell: PastExperienceCollectionViewCell = pastCollectionView!.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
+        
+        expCell.layer.cornerRadius = 8
+        
+        if (expCell.frame.size.height < 550) {
+            expCell.frame.size.width = (screenWidth / 2) - 10
+            expCell.frame.size.height = (screenWidth / 3) + 50
+        }
+        else if (expCell.frame.size.height < 650) {
+            expCell.frame.size.width = (screenWidth / 2) - 20
+            expCell.frame.size.height = (screenWidth / 3) + 50
+        }
+        else {
+            expCell.frame.size.width = (screenWidth / 2) - 50
+            expCell.frame.size.height = (screenWidth / 3)
+        }
         
         let experience = testData[indexPath.row]
         let image = testImages[indexPath.row]
         expCell.setExperienceCell(experience, orgImageText: image)
         
-        expCell.backgroundColor = UIColor(red:52.0/255.0, green:152.0/255.0, blue:219.0/255.0, alpha:1.0)
+        expCell.backgroundColor = UIColor.whiteColor()
         
         return expCell
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minLineSpacing
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minInteritemSpacing
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var experienceVC: ExperienceDetailViewController = segue.destinationViewController as! ExperienceDetailViewController
         
         let cell = sender as! PastExperienceCollectionViewCell
-        let path = self.pastCollectionView.indexPathForCell(cell)
+        let path = self.pastCollectionView!.indexPathForCell(cell)
         
         var selectedExp = path?.row
         

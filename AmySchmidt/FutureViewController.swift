@@ -11,12 +11,25 @@ import UIKit
 class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     let testData = ["Trunk Club Internship", "B.S. in Computer Science", "Career Goals", "Personal Goals"]
-    
+    let testImages = ["trunkclub.png", "CS.png", "career.png", "personal.png"]
+
     @IBOutlet weak var futureCollectionView: UICollectionView!
+    
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let minInteritemSpacing : CGFloat = 0
+    let minLineSpacing : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //determine screen size
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
         //declare navigation Bar
         var navBar = self.navigationController?.navigationBar
         
@@ -47,15 +60,33 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         let futureCell: FutureCollectionViewCell = futureCollectionView.dequeueReusableCellWithReuseIdentifier("FutureCell", forIndexPath: indexPath) as! FutureCollectionViewCell
         
+        futureCell.layer.cornerRadius = 8
+        futureCell.frame.size.width = (screenWidth / 2)
+        futureCell.frame.size.height = (screenWidth / 3)
         
         let future = testData[indexPath.row]
-        futureCell.setFutureCell(future)
+        let image = testImages[indexPath.row]
+
+        futureCell.setFutureCell(future, futureImageText: image)
         
         futureCell.backgroundColor = UIColor.whiteColor()
         
         return futureCell
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minLineSpacing
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return minInteritemSpacing
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var futureDetailVC: FutureDetailViewController = segue.destinationViewController as! FutureDetailViewController
         
