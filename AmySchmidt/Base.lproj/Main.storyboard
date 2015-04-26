@@ -150,25 +150,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-In-vIn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Position" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-In-vIn">
                                 <rect key="frame" x="272" y="84" width="56" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-Uv-6ql">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timeline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiC-Uv-6ql">
                                 <rect key="frame" x="271" y="107" width="58" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-DC-8LG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehh-DC-8LG">
                                 <rect key="frame" x="270" y="130" width="60" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGR-ia-WKA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGR-ia-WKA">
                                 <rect key="frame" x="36" y="188" width="528" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -178,16 +178,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NGR-ia-WKA" secondAttribute="trailing" constant="20" id="5G4-vC-eB1"/>
+                            <constraint firstItem="ehh-DC-8LG" firstAttribute="leading" secondItem="WPN-oi-ZsR" secondAttribute="leadingMargin" id="7pN-pY-fig"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eph-In-vIn" secondAttribute="trailing" id="8qF-la-rWo"/>
                             <constraint firstItem="XiC-Uv-6ql" firstAttribute="top" secondItem="eph-In-vIn" secondAttribute="bottom" constant="5" id="I6g-ks-EQ9"/>
+                            <constraint firstItem="XiC-Uv-6ql" firstAttribute="leading" secondItem="WPN-oi-ZsR" secondAttribute="leadingMargin" id="OTN-El-5Bb"/>
                             <constraint firstAttribute="centerX" secondItem="eph-In-vIn" secondAttribute="centerX" id="OZD-wI-buW"/>
                             <constraint firstItem="NGR-ia-WKA" firstAttribute="leading" secondItem="WPN-oi-ZsR" secondAttribute="leadingMargin" constant="20" id="TTg-b1-drR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XiC-Uv-6ql" secondAttribute="trailing" id="Toh-QK-hZ3"/>
                             <constraint firstItem="ehh-DC-8LG" firstAttribute="top" secondItem="XiC-Uv-6ql" secondAttribute="bottom" constant="5" id="cBQ-vb-78z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ehh-DC-8LG" secondAttribute="trailing" id="jdQ-UH-dOY"/>
                             <constraint firstItem="XiC-Uv-6ql" firstAttribute="centerX" secondItem="ehh-DC-8LG" secondAttribute="centerX" id="jut-w6-Bag"/>
                             <constraint firstItem="NGR-ia-WKA" firstAttribute="top" secondItem="ehh-DC-8LG" secondAttribute="bottom" constant="40" id="qRz-Eb-khT"/>
+                            <constraint firstItem="eph-In-vIn" firstAttribute="leading" secondItem="WPN-oi-ZsR" secondAttribute="leadingMargin" id="u8B-J7-jdm"/>
                             <constraint firstItem="XiC-Uv-6ql" firstAttribute="centerX" secondItem="eph-In-vIn" secondAttribute="centerX" id="v7f-nH-0Yh"/>
                             <constraint firstItem="eph-In-vIn" firstAttribute="top" secondItem="GQj-Rx-gxf" secondAttribute="bottom" constant="20" id="vQe-Zr-Ga3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="NGR-ia-WKA" id="3DT-bI-Nkk"/>
+                        <outlet property="locationLabel" destination="ehh-DC-8LG" id="qFz-Fw-TGR"/>
+                        <outlet property="positionLabel" destination="eph-In-vIn" id="dTe-rO-eEn"/>
+                        <outlet property="timelineLabel" destination="XiC-Uv-6ql" id="5rG-ae-NTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7K-UM-j10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,7 +224,7 @@
                                     <constraint firstAttribute="width" constant="300" id="I5h-uf-bAa"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW5-bw-syR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW5-bw-syR">
                                 <rect key="frame" x="36" y="404" width="528" height="127"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -229,6 +241,10 @@
                             <constraint firstItem="6yq-S7-Ek3" firstAttribute="top" secondItem="rW5-bw-syR" secondAttribute="bottom" constant="20" id="tHH-Kv-udo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="futureImage" destination="pDk-NB-zEf" id="jh1-sK-btP"/>
+                        <outlet property="futureLabel" destination="rW5-bw-syR" id="cUs-Pu-U2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="819-3n-Bub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -424,6 +440,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="aboutMeImage" destination="M3Z-0V-3wo" id="OK6-Y8-KYN"/>
+                        <outlet property="aboutMeLabel" destination="8zk-oq-7gh" id="jQk-z6-zPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gN-dv-v07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

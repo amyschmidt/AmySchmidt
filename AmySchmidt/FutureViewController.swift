@@ -116,6 +116,7 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
         println("Prepare for Segue: Item Selected: \(selected!)")
         
         futureDetailVC.row = selected
+        futureDetailVC.futuresArray = futures
     }
 
 

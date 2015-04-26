@@ -10,8 +10,11 @@ import UIKit
 
 class FutureDetailViewController: UIViewController {
 
-    let testData = ["Trunk Club Internship", "B.S. in Computer Science", "Career Goals", "Personal Goals"]
 
+    @IBOutlet weak var futureImage: UIImageView!
+    @IBOutlet weak var futureLabel: UILabel!
+    
+    var futuresArray : [FutureModel]?
     var row: Int?
 
     override func viewDidLoad() {
@@ -24,7 +27,7 @@ class FutureDetailViewController: UIViewController {
             //set navBar style and title
             nav.barTintColor = UIColor(red:135.0/255.0, green:134.0/255.0, blue:173.0/255.0, alpha:1.0)
             nav.translucent = false
-            nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 23)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+            nav.titleTextAttributes = [NSFontAttributeName : UIFont(name: "Helvetica Neue", size: 18)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
             nav.backItem?.title = " "
             nav.tintColor = UIColor.whiteColor()
             
@@ -32,7 +35,16 @@ class FutureDetailViewController: UIViewController {
         }
         
         self.navigationItem.backBarButtonItem?.title = " "
-        self.navigationItem.title = testData[row!]
+        futureLabel.numberOfLines = 0
+        
+        //set dynamic data
+        if let array = futuresArray {
+            if let element = row {
+                self.navigationItem.title = array[element].title
+                futureLabel.text = array[element].objDescription
+            }
+        }
+
     }
 
 

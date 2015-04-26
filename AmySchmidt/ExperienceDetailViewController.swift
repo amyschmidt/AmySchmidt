@@ -10,10 +10,14 @@ import UIKit
 
 class ExperienceDetailViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var timelineLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
-    let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
-
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    var experienceArray : [ExperienceModel]?
     var row: Int?
     
     override func viewDidLoad() {
@@ -33,15 +37,20 @@ class ExperienceDetailViewController: UIViewController {
             
         }
         
-
         self.navigationItem.backBarButtonItem?.title = " "
-        self.navigationItem.title = testData[row!]
-        
-        println("View Did Load: Item Selected: \(row!) and \(testData[row!])")
-        
-        
+        descriptionLabel.numberOfLines = 0
 
-
+        //set dynamic data
+        if let array = experienceArray {
+            if let element = row {
+                self.navigationItem.title = array[element].orgName
+                positionLabel.text = array[element].position
+                timelineLabel.text = array[element].orgTimeline
+                locationLabel.text = array[element].orgLocation
+                descriptionLabel.text = array[element].orgDescription
+            }
+        }
+       
     }
 
 

@@ -10,8 +10,6 @@ import UIKit
 
 class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
-    let testData = ["Background", "Coding", "Music", "Fashion", "Cooking", "Traveling"]
-    let testImages = ["background.png", "coding.png", "music.png", "fashion.png", "cooking.png", "travel.png"]
 
     @IBOutlet weak var aboutMeCollectionView: UICollectionView!
     
@@ -119,6 +117,7 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
         println("Prepare for Segue: Item Selected: \(selected!)")
         
         aboutMeDetailVC.row = selected
+        aboutMeDetailVC.aboutMeArray = aboutArray
     }
 
 

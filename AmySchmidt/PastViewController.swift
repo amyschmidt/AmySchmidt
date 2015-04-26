@@ -120,6 +120,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         println("Prepare for Segue: Item Selected: \(selectedExp!)")
         
         experienceVC.row = selectedExp
+        experienceVC.experienceArray = experiences
     }
 
 }

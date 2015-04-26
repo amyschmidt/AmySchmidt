@@ -10,8 +10,10 @@ import UIKit
 
 class AboutMeDetailViewController: UIViewController {
 
-    let testData = ["Background", "Coding", "Music", "Fashion", "Cooking", "Traveling"]
+    @IBOutlet weak var aboutMeImage: UIImageView!
+    @IBOutlet weak var aboutMeLabel: UILabel!
     
+    var aboutMeArray : [AboutModel]?
     var row: Int?
     
     override func viewDidLoad() {
@@ -33,8 +35,15 @@ class AboutMeDetailViewController: UIViewController {
         
         
         self.navigationItem.backBarButtonItem?.title = " "
-        self.navigationItem.title = testData[row!]
-
+        aboutMeLabel.numberOfLines = 0
+        
+        //set dynamic data
+        if let array = aboutMeArray {
+            if let element = row {
+                self.navigationItem.title = array[element].title
+                aboutMeLabel.text = array[element].objDescription
+            }
+        }
     }
 
     
