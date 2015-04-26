@@ -18,7 +18,7 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
-    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 50.0)
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
     
@@ -62,8 +62,9 @@ class FutureViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         futureCell.layer.cornerRadius = 8
         futureCell.frame.size.width = (screenWidth / 2)
-        futureCell.frame.size.height = (screenWidth / 3)
-        
+        futureCell.frame.size.height = (screenHeight / 3)
+
+
         let future = testData[indexPath.row]
         let image = testImages[indexPath.row]
 

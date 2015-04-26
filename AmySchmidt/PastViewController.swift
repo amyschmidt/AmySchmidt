@@ -18,9 +18,10 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
-    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 40.0)
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         }
         
         self.navigationItem.backBarButtonItem?.title = " "
+        
 
         
         //get data from json into an array
@@ -83,25 +85,16 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         let expCell: PastExperienceCollectionViewCell = pastCollectionView!.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
         
         expCell.layer.cornerRadius = 8
+        expCell.frame.size.width = (screenWidth / 2)
+        expCell.frame.size.height = (screenHeight / 3)
         
-        if (expCell.frame.size.height < 550) {
-            expCell.frame.size.width = (screenWidth / 2) - 10
-            expCell.frame.size.height = (screenWidth / 3) + 50
-        }
-        else if (expCell.frame.size.height < 650) {
-            expCell.frame.size.width = (screenWidth / 2) - 20
-            expCell.frame.size.height = (screenWidth / 3) + 50
-        }
-        else {
-            expCell.frame.size.width = (screenWidth / 2) - 50
-            expCell.frame.size.height = (screenWidth / 3)
-        }
         
         let experience = testData[indexPath.row]
         let image = testImages[indexPath.row]
         expCell.setExperienceCell(experience, orgImageText: image)
         
         expCell.backgroundColor = UIColor.whiteColor()
+
         
         return expCell
     }

@@ -18,7 +18,7 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
-    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 0.0)
+    let sectionInsets = UIEdgeInsets(top: 40.0, left: 0.0, bottom: 40.0, right: 50.0)
     let minInteritemSpacing : CGFloat = 0
     let minLineSpacing : CGFloat = 0
     
@@ -63,7 +63,8 @@ class AmyViewController: UIViewController, UICollectionViewDelegateFlowLayout, U
         
         aboutCell.layer.cornerRadius = 8
         aboutCell.frame.size.width = (screenWidth / 2)
-        aboutCell.frame.size.height = (screenWidth / 3)
+        aboutCell.frame.size.height = (screenHeight / 3)
+        
         
         let about = testData[indexPath.row]
         let image = testImages[indexPath.row]
