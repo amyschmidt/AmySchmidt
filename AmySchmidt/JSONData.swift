@@ -11,7 +11,7 @@ import Foundation
 class JSONData {
 
     //get past experience data
-    class func getTopAppsDataFromFileWithSuccess(success: ((data: NSData) -> Void)) {
+    class func getExperienceDataFromFileWithSuccess(success: ((data: NSData) -> Void)) {
         //1
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             //2

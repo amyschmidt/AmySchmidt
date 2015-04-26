@@ -31,12 +31,13 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         
         //get data from json into an array
-        JSONData.getTopAppsDataFromFileWithSuccess { (data) -> Void in
+        JSONData.getExperienceDataFromFileWithSuccess { (data) -> Void in
             let json = JSON(data: data)
 
             if let experienceArray = json["experience"].array {
-                var experiences = [ExperienceModel]()
-            
+                
+            var experiences = [ExperienceModel]()
+                
                 for expDict in experienceArray {
                     var orgName: String? = expDict["orgName"].string
                     var position: String? = expDict["position"].string
@@ -47,7 +48,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
                     var experience = ExperienceModel(orgName: orgName, position: position, orgDescription: orgDescription, orgTimeline: orgTimeline, orgLocation: orgLocation)
                     experiences.append(experience)
                 }
-                println(experiences[0].orgName)
             }
         }
 
@@ -68,7 +68,6 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let expCell: PastExperienceCollectionViewCell = pastCollectionView.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
-        
         
         let experience = testData[indexPath.row]
         expCell.setExperienceCell(experience)
