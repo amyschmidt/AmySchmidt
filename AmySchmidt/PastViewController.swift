@@ -14,9 +14,18 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //determine screen size 
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
         //declare navigation Bar
         var navBar = self.navigationController?.navigationBar
         
@@ -29,6 +38,11 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         self.navigationItem.backBarButtonItem?.title = " "
         
+        //set layout of collection view cell
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         
         //get data from json into an array
         JSONData.getExperienceDataFromFileWithSuccess { (data) -> Void in
