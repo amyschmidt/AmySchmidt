@@ -11,10 +11,12 @@ import UIKit
 class PastExperienceCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var orgName: UILabel!
+    @IBOutlet weak var orgImage: UIImageView!
     
-    func setExperienceCell(orgLabelText: String) {
+    func setExperienceCell(orgLabelText: String, orgImageText: String) {
 
         self.orgName.text = orgLabelText
         self.orgName.numberOfLines = 0
+        self.orgImage.image = UIImage(named: orgImageText)
     }
 }

@@ -13,6 +13,7 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     @IBOutlet weak var pastCollectionView: UICollectionView!
     
     let testData = ["University of Missouri", "Microsoft Application Development Lab", "Department of Student Acvitities", "Progressus Media", "Monsanto", "Adaptive Computing Technology Center"]
+    let testImages = ["UMC.png", "MADL.png", "DSA.png", "Progressus.png", "Monsanto.png", "ACT.png"]
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -84,9 +85,10 @@ class PastViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         let expCell: PastExperienceCollectionViewCell = pastCollectionView.dequeueReusableCellWithReuseIdentifier("ExperienceCell", forIndexPath: indexPath) as! PastExperienceCollectionViewCell
         
         let experience = testData[indexPath.row]
-        expCell.setExperienceCell(experience)
+        let image = testImages[indexPath.row]
+        expCell.setExperienceCell(experience, orgImageText: image)
         
-        expCell.backgroundColor = UIColor.whiteColor()
+        expCell.backgroundColor = UIColor(red:52.0/255.0, green:152.0/255.0, blue:219.0/255.0, alpha:1.0)
         
         return expCell
     }
